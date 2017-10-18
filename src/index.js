@@ -64,5 +64,6 @@ class Pictures extends React.Component {
 
 ReactDOM.render(
   <Pictures />,
+  
   document.getElementById('root')
 );
