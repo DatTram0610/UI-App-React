@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 
 import Pictures from './pictures.js';
+import RegisterForm from './register-form.js';
 
 class NavBar extends React.Component {
     render() {
@@ -14,7 +15,7 @@ class NavBar extends React.Component {
                 <div>
                     <ul className="nav-bar-ul">
                         <li className="nav-bar-li"><Link to="/" className="nav-bar-link">Home</Link></li>
-                        <li className="nav-bar-li"><Link to="/about" className="nav-bar-link">About</Link></li>
+                        <li className="nav-bar-li"><Link to="/signup" className="nav-bar-link">Sign Up</Link></li>
                         <li className="nav-bar-li"><Link to="/topics" className="nav-bar-link">Topics</Link></li>
                         <li className="nav-bar-li"><Link to="/images" className="nav-bar-link">Images</Link></li>
                     </ul>
@@ -22,7 +23,7 @@ class NavBar extends React.Component {
                     <hr />
 
                     <Route exact path="/" component={Home} />
-                    <Route path="/about" component={About} />
+                    <Route path="/signup" component={RegisterForm} />
                     <Route path="/topics" component={Topics} />
                     <Route path="/images" component={Pictures} />
                 </div>
@@ -36,11 +37,11 @@ const Home = () => (
     </div>
 )
 
-const About = () => (
-    <div>
-        <h2>About</h2>
-    </div>
-)
+// const About = () => (
+//     <div>
+//         <h2>About</h2>
+//     </div>
+// )
 
 const Topics = ({ match }) => (
     <div>
