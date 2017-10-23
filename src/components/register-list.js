@@ -14,7 +14,7 @@ class RegisterList extends React.Component {
     componentDidMount() {
         this.setState({ loading: true });
 
-        api.aGetUser()
+        api.getUser()
             .then(response => {
                 this.setState({ users: response.data, isLoading: false })
             })

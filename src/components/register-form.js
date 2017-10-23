@@ -5,14 +5,6 @@ import api from '../utilities/api';
 
 class RegisterForm extends React.Component {
     handleRegisterForm(project) {
-        // api.postUser(project)
-        //     .then(response => {
-        //         console.log(response);
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     })
-        debugger;
         api.postUser(project)
             .then(response => {
                 console.log(response);
