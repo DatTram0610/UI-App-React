@@ -17,8 +17,8 @@ class Pictures extends React.Component {
     this.setState({ isLoading: true });
 
     api.getPictures()
-      .then(data =>
-        this.setState({ pictures: data.results, isLoading: false })
+      .then(response =>
+        this.setState({ pictures: response.data.results, isLoading: false })
       )
       .catch(error =>
         this.setState({ error, isLoading: false })
@@ -29,12 +29,12 @@ class Pictures extends React.Component {
   render() {
     const { pictures, isLoading, error } = this.state;
 
-    if (error) {
-      return <p>{error.message}</p>
-    }
-
     if (isLoading) {
       return <p>Loading...</p>;
+    }
+
+    if (error) {
+      return <p>{error.message}</p>
     }
 
     return (
