@@ -5,8 +5,9 @@
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.18.2",
+    "classnames": "^2.2.5",
     "express": "^4.16.2",
-    "mongoose": "^4.12.3",
+    "mongoose": "^4.12.4",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -15,6 +16,7 @@
     "react-scripts": "1.0.14",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
+    "redux-form": "^7.1.1",
     "redux-promise-middleware": "^4.4.1",
     "redux-thunk": "^2.2.0",
     "semantic-ui-css": "^2.2.12",

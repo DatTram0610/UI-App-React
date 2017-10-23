@@ -74,3 +74,9 @@ li.nav-bar-li:hover {
   background-color: #111;;
 }
 /* NAV-BAR End */
+
+/* FORM Begin */
+.error {
+  color: #9f3a38;
+}
+/* FORM End */
