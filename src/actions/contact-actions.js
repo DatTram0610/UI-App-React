@@ -28,3 +28,30 @@ export function saveContact(contact) {
         })
     }
 }
+
+export function fetchContact(id) {
+    return dispatch => {
+        return dispatch({
+            type: 'FETCH_CONTACT',
+            payload: client.get(`${url}/${id}`)
+        })
+    }
+}
+
+export function updateContact(contact) {
+    return dispatch => {
+        return dispatch({
+            type: 'UPDATE_CONTACT',
+            payload: client.put(`${url}/${contact._id}`, contact)
+        })
+    }
+}
+
+export function deleteContact(id) {
+    return dispatch => {
+        return dispatch({
+            type: 'DELETE_CONTACT',
+            payload: client.delete(`${url}/${id}`)
+        })
+    }
+}

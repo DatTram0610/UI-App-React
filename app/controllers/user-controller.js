@@ -11,7 +11,10 @@ function userController() {
 
     return {
         getAllUser: getAllUser,
+        getUserById: getUserById,
         postUser: postUser, 
+        updateById: updateById,
+        removeById: removeById,
         add: add
     };
 
@@ -31,20 +34,61 @@ function userController() {
                 res.status(200).json(users);
             })
             .catch(error => {
-                res.status(500).json('Error Getting All Users!');
+                res.status(500).json('Getting All Users Error!');
                 // res.status(500).json(new response.ErrorResponse(error));
             })
     };
 
+    function getUserById(req, res) {
+        let queryCondition = {
+            _id: req.params.id
+        };
+
+        userService.getUserById(queryCondition)
+            .then(user => {
+                res.status(200).json(user);
+            })
+            .catch(error => {
+                res.status(500).send('Getting User By Id Error!');
+            })
+    };
+
     function postUser (req, res) {
-        console.log(req.body);
         userService
             .postUser(req.body)
             .then(user => {
-                res.status(200).send('Inserting User To Database Success!');
+                res.status(200).json(user);
             })
             .catch(error => {
-                res.status(500).send('Inserting User To Database Error!');
+                res.status(500).send('Inserting User Error!');
             })
     };
+
+    function updateById (req, res) {
+        let queryCondition = {
+            _id: req.params.id
+        };
+
+        userService.updateById(queryCondition, req.body) 
+            .then(user => {
+                res.status(200).json(user);
+            })
+            .catch(error => {
+                res.status(500).send('Update User By Id Error!');
+            })
+    }
+
+    function removeById(req, res) {
+        let queryCondition = {
+            _id: req.params.id
+        }
+
+        userService.removeById(queryCondition)
+            .then(user => {
+                res.status(200).json(user);
+            })
+            .catch(error => {
+                res.status(500).send('Delete User By Id Error!')
+            })
+    }
 };
